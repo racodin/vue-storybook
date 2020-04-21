@@ -1,3 +1,5 @@
+import { linkTo } from '@storybook/addon-links'
+
 export default {
   title: 'Button',
 };
@@ -7,7 +9,8 @@ export const withText = () => ({
 });
 
 export const withEmoji = () => ({
-  template: '<my-button>😀 😎 👍 💯</my-button>'
+  template: '<my-button :click="action">😀 😎 👍 💯</my-button>',
+  methods: { action: linkTo() }
 });
 
 export const asAComponent = () => ({
